@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="180; url=Results.html" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bathroom</title>
+    <script src="Timer.js"></script>
+    <style>
+        body,
+        div,
+        p {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* div {
+            border: 1px solid lawngreen;
+        } */
+
+        .bathroom-senorio {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 1080px;
+            margin: 0 auto;
+        }
+
+        .bg-img {
+
+            width: 1080px;
+            height: 800px;
+        }
+
+        .item {
+            float: left;
+            position: relative;
+        }
+
+        .washing {
+            width: 298px;
+            height: 260px;
+            left: 550px;
+            top: -347px;
+        }
+
+        .bathtub {
+            width: 457px;
+            height: 310px;
+            top: -445px;
+            left: -280px;
+        }
+
+        .dryer1 {
+            width: 86px;
+            height: 98px;
+            top: -540px;
+            left: -120px;
+        }
+
+        .dryer2 {
+            width: 134px;
+            height: 94px;
+            top: -539px;
+            left: -305px;
+        }
+
+        .faucet {
+            width: 306px;
+            height: 502px;
+            top: -720px;
+        }
+
+        .light {
+            width: 262px;
+            height: 181px;
+            top: -1407px;
+            left: 500px;
+        }
+
+        .cloud1 {
+            width: 64px;
+            height: 40px;
+            top: -1350px;
+            left: -400px;
+        }
+
+        .cloud2 {
+            width: 68px;
+            height: 42px;
+            top: -1350px;
+            left: -370px;
+        }
+
+        .sky {
+            width: 226px;
+            height: 142px;
+            top: -1300px;
+            left: -530px;
+        }
+
+        .sun {
+            width: 106px;
+            height: 122px;
+            top: -1365px;
+            left: -550px;
+        }
+
+        .tree1 {
+            width: 126px;
+            height: 146px;
+            top: -1302px;
+            left: -860px;
+        }
+
+        .tree2 {
+            width: 128px;
+            height: 146px;
+            top: -1449px;
+            left: -90px;
+        }
+
+        .backbutton {
+            /* border: 1px solid greenyellow; */
+            width: 140px;
+            height: 90px;
+            top: -700px;
+            left: 590px;
+        }
+
+        .back-button {
+            width: 140px;
+            height: 90px;
+        }
+
+        #showtime {
+            float: left;
+            position: relative;
+            /* border: 3px solid red; */
+            top: -850px;
+            left: -70px;
+            width: 110px;
+            height: 55px;
+            font-size: 40px;
+            color: red;
+            font-family: "Comic Sans MS";
+        }
+
+        /* .audio {
+            width: 50px;
+            height: 20px;
+        }
+        .mp3 {
+            float: left;
+            position: relative;
+        } */
+    </style>
+
+</head>
+
+<body>
+    <div class="bathroom-senorio">
+        <!-- The background of the website. -->
+        <img src="https://i.imgur.com/CWBe3M6.jpg" alt="Can not find the image source." class="bg-img">
+
+        <!-- The washing machine-on img. -->
+        <div class="item washing"><img id="washingmachine" onClick="changewashing()"
+                src="https://i.imgur.com/geGQoDE.png"></div>
+
+
+        <audio src="bensound-buddy.mp3" autoplay></audio>
+
+        <!-- The bathtub-on img. -->
+        <div class="item bathtub"><img id="bathtub" onClick="changebathtub()" src="https://i.imgur.com/hrbT4rT.png">
+        </div>
+        <!-- The dryer1-on img. -->
+        <div class="item dryer1"><img id="dryerno1" onClick="changedryer1()" src="https://i.imgur.com/NrUbPgr.png">
+        </div>
+        <!-- The dryer2-on img. -->
+        <div class="item dryer2"><img id="dryerno2" onClick="changedryer2()" src="https://i.imgur.com/hbZM0rH.png">
+        </div>
+        <!-- The faucet-open img. -->
+        <div class="item faucet"><img id="faucet" onClick="changefaucet()" src="https://i.imgur.com/HnuOG4x.png"></div>
+        <!-- The light-on img. -->
+        <div class="item light"><img id="light" onClick="changelight()" src="https://i.imgur.com/z41KUeJ.png"></div>
+        <!-- The back button img. -->
+        <div class="item backbutton">
+            <a href="ChooseRooms.html"><img src="https://imgur.com/oYTrppb.png" alt="Can not find the image source."
+                    class="back-button"></a>
+        </div>
+        <!-- The cloud1 img. -->
+        <div class="item cloud1">
+            <img src="https://i.imgur.com/fW2CXeD.png" alt="Can not find the image source." id="cloud1img">
+        </div>
+        <!-- The cloud2 img. -->
+        <div class="item cloud2">
+            <img src="https://i.imgur.com/dCHHZsO.png" alt="Can not find the image source." id="cloud2img">
+        </div>
+        <!-- The sky img. -->
+        <div class="item sky">
+            <img src="https://i.imgur.com/lsU0Hs4.png" alt="Can not find the image source." id="skyimg">
+        </div>
+        <!-- The sun img. -->
+        <div class="item sun">
+            <img src="https://i.imgur.com/xUEuCyw.png" alt="Can not find the image source." id="sunimg">
+        </div>
+        <!-- The tree1 img. -->
+        <div class="item tree1">
+            <img src="https://i.imgur.com/YBf9WzN.png" alt="Can not find the image source." id="tree1img">
+        </div>
+        <!-- The tree2 img. -->
+        <div class="item tree2">
+            <img src="https://i.imgur.com/WHzhVuO.png" alt="Can not find the image source." id="tree2img">
+        </div>
+
+        <div id="showtime">
+
+        </div>
+
+        <script>
+
+            resetTime("showtime", 180);
+
+
+            var a1 = 0, b1 = 0, c1 = 0, d1 = 0, e1 = 0, f1 = 0;
+            // hide cloud1
+            var cloud1 = document.getElementById("cloud1img");
+            cloud1.style.display = "none";
+            // hide cloud2
+            var cloud2 = document.getElementById("cloud2img")
+            cloud2.style.display = "none";
+            //hide sky
+            var sky = document.getElementById("skyimg")
+            sky.style.display = "none";
+            //hide sun
+            var sun = document.getElementById("sunimg")
+            sun.style.display = "none";
+            //hide tree1
+            var tree1 = document.getElementById("tree1img")
+            tree1.style.display = "none";
+            //hide tree2
+            var tree2 = document.getElementById("tree2img")
+            tree2.style.display = "none";
+
+            //show cloud1 after click washing machine and show washing machine off
+            function changewashing() {
+                var element = document.getElementById("washingmachine");
+                if (element.src.match("geGQoDE.png")) {
+                    element.src = "https://i.imgur.com/CNvZeij.png";
+                    cloud1.style.display = "block";
+                    a1 = 1;
+                }
+                else {
+                    element.src = "https://i.imgur.com/geGQoDE.png";
+                    cloud1.style.display = "none";
+                    a1 = 0;
+                }
+            }
+            //show cloud2 after click bathtub and show bathtub off
+            function changebathtub() {
+                var element = document.getElementById("bathtub");
+                if (element.src.match("hrbT4rT.png")) {
+                    element.src = "https://i.imgur.com/AZAomrP.png";
+                    cloud2.style.display = "block";
+                    b1 = 1;
+                }
+                else {
+                    element.src = "https://i.imgur.com/hrbT4rT.png";
+                    cloud2.style.display = "none";
+                    b1 = 0;
+                }
+            }
+
+            function changedryer1() {
+                var element = document.getElementById("dryerno1");
+                if (element.src.match("NrUbPgr.png")) {
+                    element.src = "https://i.imgur.com/bKYQ518.png";
+                    sky.style.display = "block";
+                    c1 = 1;
+                }
+                else {
+                    element.src = "https://i.imgur.com/NrUbPgr.png";
+                    sky.style.display = "none";
+                    c1 = 0;
+                }
+            }
+
+            function changedryer2() {
+                var element = document.getElementById("dryerno2");
+                if (element.src.match("hbZM0rH.png")) {
+                    element.src = "https://i.imgur.com/NS9fn0d.png";
+                    sun.style.display = "block";
+                    d1 = 1;
+                }
+                else {
+                    element.src = "https://i.imgur.com/hbZM0rH.png";
+                    sun.style.display = "none";
+                    d1 = 0;
+                }
+            }
+
+            function changefaucet() {
+                var element = document.getElementById("faucet");
+                if (element.src.match("HnuOG4x.png")) {
+                    element.src = "https://i.imgur.com/MYBKSxS.png";
+                    tree1.style.display = "block";
+                    e1 = 1;
+                }
+                else {
+                    element.src = "https://i.imgur.com/HnuOG4x.png";
+                    tree1.style.display = "none";
+                    e1 = 0;
+                }
+            }
+
+            function changelight() {
+                var element = document.getElementById("light");
+                if (element.src.match("z41KUeJ.png")) {
+                    element.src = "https://i.imgur.com/1Xn9g42.png";
+                    tree2.style.display = "block";
+                    f1 = 1;
+                }
+                else {
+                    element.src = "https://i.imgur.com/z41KUeJ.png";
+                    tree2.style.display = "none";
+                    f1 = 0;
+                }
+            }
+
+            if (a1 && b1 && c1 && d1 && e1 && f1 == 1) {
+                window.location.href = 'Results.html';
+            }
+
+        </script>
+</body>
+
+</html>
